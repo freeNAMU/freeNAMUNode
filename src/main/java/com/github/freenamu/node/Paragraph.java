@@ -1,27 +1,36 @@
-package com.github.freenamu.node.paragraph;
-
-import com.github.freenamu.node.Node;
+package com.github.freenamu.node;
 
 import java.util.List;
 import java.util.Objects;
 
 public class Paragraph extends Node {
+    private final String title;
     private final int level;
     private final boolean fold;
-    private final String title;
 
-    public Paragraph(int level, boolean fold, String title, Node child) {
-        super(Type.Paragraph, child);
+    public Paragraph(String title, int level, boolean fold) {
+        super();
+        this.title = title;
         this.level = level;
         this.fold = fold;
-        this.title = title;
     }
 
-    public Paragraph(int level, boolean fold, String title, List<Node> children) {
-        super(Type.Paragraph, children);
+    public Paragraph(String title, int level, boolean fold, Node child) {
+        super(child);
+        this.title = title;
         this.level = level;
         this.fold = fold;
+    }
+
+    public Paragraph(String title, int level, boolean fold, List<Node> children) {
+        super(children);
         this.title = title;
+        this.level = level;
+        this.fold = fold;
+    }
+
+    public String getTitle() {
+        return title;
     }
 
     public int getLevel() {
@@ -30,10 +39,6 @@ public class Paragraph extends Node {
 
     public boolean isFold() {
         return fold;
-    }
-
-    public String getTitle() {
-        return title;
     }
 
     @Override

@@ -1,4 +1,4 @@
 package com.github.freenamu.node;
 
-public class Article extends Node {
+public class Italic extends Node {
 }

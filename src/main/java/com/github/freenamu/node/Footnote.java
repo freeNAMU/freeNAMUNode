@@ -1,6 +1,4 @@
-package com.github.freenamu.node.singleline;
-
-import com.github.freenamu.node.Node;
+package com.github.freenamu.node;
 
 import java.util.List;
 import java.util.Objects;
@@ -9,17 +7,17 @@ public class Footnote extends Node {
     private final String anchor;
 
     public Footnote(String anchor) {
-        super(Type.Footnote);
+        super();
         this.anchor = anchor;
     }
 
     public Footnote(String anchor, Node child) {
-        super(Type.Footnote, child);
+        super(child);
         this.anchor = anchor;
     }
 
     public Footnote(String anchor, List<Node> children) {
-        super(Type.Footnote, children);
+        super(children);
         this.anchor = anchor;
     }
 

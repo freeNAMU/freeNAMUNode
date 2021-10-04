@@ -1,12 +1,12 @@
-package com.github.freenamu.node.singleline;
+package com.github.freenamu.node;
 
-import com.github.freenamu.node.Node;
+import java.util.Objects;
 
 public class Text extends Node {
     private final String text;
 
     public Text(String text) {
-        super(Type.Text);
+        super();
         this.text = text;
     }
 
@@ -18,6 +18,8 @@ public class Text extends Node {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        return text.equals(((Text) o).text);
+        if (!super.equals(o)) return false;
+        Text text1 = (Text) o;
+        return Objects.equals(text, text1.text);
     }
 }
