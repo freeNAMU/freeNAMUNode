@@ -4,32 +4,32 @@ import java.util.List;
 import java.util.Objects;
 
 public class Paragraph extends Node {
-    private final String title;
+    private final List<Node> title;
     private final int level;
     private final boolean fold;
 
-    public Paragraph(String title, int level, boolean fold) {
+    public Paragraph(List<Node> title, int level, boolean fold) {
         super();
         this.title = title;
         this.level = level;
         this.fold = fold;
     }
 
-    public Paragraph(String title, int level, boolean fold, Node child) {
+    public Paragraph(List<Node> title, int level, boolean fold, Node child) {
         super(child);
         this.title = title;
         this.level = level;
         this.fold = fold;
     }
 
-    public Paragraph(String title, int level, boolean fold, List<Node> children) {
+    public Paragraph(List<Node> title, int level, boolean fold, List<Node> children) {
         super(children);
         this.title = title;
         this.level = level;
         this.fold = fold;
     }
 
-    public String getTitle() {
+    public List<Node> getTitle() {
         return title;
     }
 
